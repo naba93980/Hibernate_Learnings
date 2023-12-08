@@ -1,0 +1,69 @@
+persistence unit in jpa -------- persistence object in hibernate
+
+
+1. Session and EntityManager:
+
+Hibernate has a Session interface for interacting with the database.
+JPA has the EntityManager interface that serves a similar purpose.
+
+// Hibernate
+Session session = sessionFactory.openSession();
+
+// JPA
+EntityManager entityManager = entityManagerFactory.createEntityManager();
+
+
+2. Entity and @Entity:
+
+In Hibernate, entities are typically annotated with @Entity.
+In JPA, the same @Entity annotation is used.
+
+// Hibernate
+@Entity
+public class MyClass {
+    // ...
+}
+
+// JPA
+@Entity
+public class MyClass {
+    // ...
+}
+
+
+3. SessionFactory and EntityManagerFactory:
+
+Hibernate uses SessionFactory to create Session instances.
+JPA uses EntityManagerFactory to create EntityManager instances.
+
+
+// Hibernate
+SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+
+// JPA
+EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("persistenceUnitName");
+
+
+4. Transaction Management:
+
+Hibernate uses its Transaction interface for managing transactions.
+JPA uses the EntityTransaction interface for transaction management.
+
+// Hibernate
+Transaction transaction = session.beginTransaction();
+
+// JPA
+EntityTransaction transaction = entityManager.getTransaction();
+
+
+
+5. Query Language:
+
+Hibernate Query Language (HQL) is similar to JPA Query Language (JPQL).
+Both are used for querying entities.
+
+// Hibernate
+Query query = session.createQuery("FROM MyClass");
+
+// JPA
+Query query = entityManager.createQuery("SELECT e FROM MyClass e");
