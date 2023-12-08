@@ -7,12 +7,18 @@ import org.hibernate.cfg.Configuration;
 
 public class App {
     public static void main(String[] args) {
+        
+        Address add1 = new Address();
+        add1.setRasta("14 number");
+        add1.setPara("doner para");
+
         User u1 = new User();
         u1.setFirstName("naba");
         u1.setLastName("modak");
         u1.setEmail("naba@gmail.com");
         u1.setBoyosh(23);
         u1.setBodyCnt(0);
+        u1.setAddress(add1);
 
         SessionFactory sf1 = new Configuration().configure().addAnnotatedClass(User.class).buildSessionFactory();
         Session s1 = sf1.openSession();

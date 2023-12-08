@@ -16,6 +16,7 @@ public class User {
     private String email;
     private String firstName;
     private String lastName;
+    private Address address;
 
     @Column(name = "Age")
     private int boyosh;
@@ -63,11 +64,17 @@ public class User {
         this.bodyCnt = bodyCnt;
     }
 
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+    
     @Override
     public String toString() {
         return "User [email=" + email + ", firstName=" + firstName + ", lastName=" + lastName + ", boyosh=" + boyosh
                 + ", bodyCnt=" + bodyCnt + "]";
     }
-
-    
 }
