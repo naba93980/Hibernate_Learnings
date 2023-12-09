@@ -37,6 +37,9 @@ public class App {
         sesssion1.persist(l1);
         sesssion1.persist(l2);
         sesssion1.persist(l3);
+
+        Student stud1 = sesssion1.get(Student.class, 1);
+        System.out.println(stud1);
         sesssion1.getTransaction().commit();
         sesssion1.close();
     }

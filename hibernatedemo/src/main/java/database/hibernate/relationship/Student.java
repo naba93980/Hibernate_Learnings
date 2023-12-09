@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 
@@ -14,7 +15,7 @@ public class Student {
     private int roll;
     private String name;
 
-    @OneToMany(mappedBy = "student") // if u give this paameter mappedBy = "student" then 3rd table student_laptop will not get created
+    @OneToMany(mappedBy = "student", fetch = FetchType.EAGER) // if u give this paameter mappedBy = "student" then 3rd table student_laptop will not get created
     private List<Laptop> laptop;
 
     public Student(){
@@ -39,4 +40,11 @@ public class Student {
     public void setLaptop(List<Laptop> laptop) {
         this.laptop = laptop;
     }
+
+    @Override
+    public String toString() {
+        return "Student [roll=" + roll + ", name=" + name + ", laptop=" + laptop + "]";
+    }
+
+    
 }

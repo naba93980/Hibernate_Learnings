@@ -39,4 +39,9 @@ public class Laptop {
     public void setStudent(Student student) {
         this.student = student;
     }
+
+    @Override
+    public String toString() {
+        return "Laptop [id=" + id + ", name=" + name + "]";
+    }
 }
